@@ -94,8 +94,8 @@ class Net(nn.Module):
 		scale_factor = self.scale_factor
 		b, _, H, W = x1.shape
 		# landmark detection and description
-		heatmaps1, features1 = self.encoder(x1)
-		heatmaps2, features2 = self.encoder(x2)
+		heatmaps1, features1 = self.CNN_branch(x1)
+		heatmaps2, features2 = self.CNN_branch(x2)
 
 		# sampling top k landmark locations and descriptors
 		pts1, _, desc1 = self.sampling_layer(heatmaps1, features1, conf_thresh=conf_thresh, is_training=False)

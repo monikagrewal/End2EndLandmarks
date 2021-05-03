@@ -41,7 +41,9 @@ def Unet_DoubleConvBlock(in_ch=1, out_ch=1, threeD=True):
 
 class UNet(nn.Module):
 	"""
-	Implementation of U-Net
+	Implementation of U-Net:
+	Paper: U-Net: Convolutional Networks for Biomedical Image Segmentation
+	Full text available at: https://arxiv.org/abs/1505.04597
 	"""
 	def __init__(self, depth=4, width=64, growth_rate=2, in_channels=1, out_channels=2, threeD=False):
 		super(UNet, self).__init__()
@@ -118,6 +120,6 @@ class UNet(nn.Module):
 
 if __name__ == '__main__':
 	model = UNet(depth=4, width=16).cuda()
-	inputs = torch.rand(2, 1, 512, 512).cuda()
+	inputs = torch.rand(1, 1, 128, 128).cuda()
 	output, features = model(inputs)
 	print (output.shape, features[0].shape)
