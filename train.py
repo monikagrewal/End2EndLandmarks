@@ -88,13 +88,13 @@ def main():
 	parser.add_argument("-device", help="cuda number", type=int, default=0)
 	parser.add_argument("-out_dir", help="output directory", default="./runs/run1")
 	parser.add_argument("-image_size", help="image size", type=int, default=128)
-	parser.add_argument("-depth", help="network depth", type=int, default=4)
+	parser.add_argument("-depth", help="network depth", type=int, default=3)
 	parser.add_argument("-width", help="network width", type=int, default=16)
-	parser.add_argument("-nepochs", help="number of epochs", type=int, default=5)
+	parser.add_argument("-nepochs", help="number of epochs", type=int, default=2)
 	parser.add_argument("-lr", help="learning rate", type=float, default=0.001)
-	parser.add_argument("-batchsize", help="batchsize", type=int, default=8)
+	parser.add_argument("-batchsize", help="batchsize", type=int, default=16)
 	parser.add_argument("-k", help="number of landmarks to sample", type=int, default=256)
-	parser.add_argument("-scale_factor", help="sparsity in landmarks", type=int, default=8)
+	parser.add_argument("-scale_factor", help="sparsity in landmarks", type=int, default=4)
 	run_params = parse_input_arguments(parser)
 
 	if torch.cuda.is_available():

@@ -7,7 +7,7 @@ Note, the implementation for generating ground truth labels (function `get_label
 Due to restrictions in sharing the medical data used in the paper, the repository is modified to train on CelebA dataset. To train on CelebA dataset, download CelebA dataset from the following link: [http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html](http://mmlab.ie.cuhk.edu.hk/projects/CelebA.html).
 Clone the repository and install dependencies using `requirements.txt`. In the root folder of the repository, run the following command on terminal:
 
-```python
+```
 python train.py -data_dir <path to CelebA dataset>
 ```
 

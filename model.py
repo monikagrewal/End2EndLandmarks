@@ -89,8 +89,9 @@ class Net(nn.Module):
 		return landmark_probs1, landmark_probs2, landmarks1, landmarks2, desc_pairs_score, desc_pairs_norm
 
 
-	def predict(self, x1, x2, deformation=None, conf_thresh=0.01):
-		k = self.k
+	def predict(self, x1, x2, deformation=None, conf_thresh=0.01, k=None):
+		if k is None:
+			k = self.k
 		scale_factor = self.scale_factor
 		b, _, H, W = x1.shape
 		# landmark detection and description

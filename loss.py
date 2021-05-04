@@ -18,7 +18,7 @@ def get_labels(pts1, pts2, deformation, device="cuda:0"):
 	lies within 1 pixel distance (which is quite strict).
 	One may try making thresh more lenient, which will allow for more (less spatially accurate) landmark matches 
 	"""
-	thresh = torch.tensor(4./float(h), device=device)
+	thresh = torch.tensor(2./float(h), device=device)
 
 	# map landmarks in image 2 on image 1
 	deformation = deformation.permute(0, 3, 1, 2)  #b, 2, h, w
